@@ -16,8 +16,6 @@
  */
 package com.lachm.alib.ttt;
 
-import com.lachm.alib.ttt.BoardValues;
-
 /**
  * Board holds the Tic-Tac-Toe board data.
  * @author Lachlan McCarty
