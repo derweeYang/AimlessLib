@@ -17,7 +17,7 @@
 package com.lachm.alib.ttt;
 
 /**
- *
+ * 
  * @author Lachlan McCarty
  */
-public enum BoardValues { EMPTY, X, O };
+public enum BoardValues { EMPTY, X, O, ERROR };

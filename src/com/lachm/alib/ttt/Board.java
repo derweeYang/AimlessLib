@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 lLachlan McCartys
+ * Copyright (C) 2014 Lachlan McCarty
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@ package com.lachm.alib.ttt;
 import com.lachm.alib.ttt.BoardValues;
 
 /**
- *
+ * Board holds the Tic-Tac-Toe board data.
  * @author Lachlan McCarty
  */
 public class Board {
@@ -38,11 +38,19 @@ public class Board {
     }
     
     public boolean set(int col, int row, BoardValues value) {
-        return false;
+        if (col > COL3 || col < COL1 || 
+            row > ROW3 || row < ROW1 || 
+            value == BoardValues.EMPTY ||
+            value == BoardValues.ERROR) return false;
+        if (board[col][row] != BoardValues.EMPTY) return false;
+        board[col][row] = value;
+        return true;
     }
     
-    public boolean get() {
-        return false;
+    public BoardValues get(int col, int row) {
+        if (col > COL3 || col < COL1 || 
+            row > ROW3 || row < ROW1) return BoardValues.ERROR;
+        return board[col][row];
     }
     
     public void clear() {

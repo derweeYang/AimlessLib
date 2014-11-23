@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /**
- * This package contains an object-oriented approach to the game Tic-Tac-Toe.
+ * Object-oriented approach to the game Tic-Tac-Toe. 
  * This is still a work in progress.
  */
 package com.lachm.alib.ttt;
