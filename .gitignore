@@ -1,0 +1,8 @@
+/*
+/nbproject/*
+!/nbproject/project.properties
+!/nbproject/project.xml
+!/src
+!/README.md
+!/dist
+!/.gitignore
