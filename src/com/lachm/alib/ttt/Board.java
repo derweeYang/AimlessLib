@@ -35,27 +35,54 @@ public class Board {
         clear();
     }
     
-    public boolean set(int col, int row, BoardValues value) {
+    public boolean set(int row, int col, BoardValues value) {
         if (col > COL3 || col < COL1 || 
             row > ROW3 || row < ROW1 || 
             value == BoardValues.EMPTY ||
             value == BoardValues.ERROR) return false;
-        if (board[col][row] != BoardValues.EMPTY) return false;
-        board[col][row] = value;
+        if (board[row][col] != BoardValues.EMPTY) return false;
+        board[row][col] = value;
         return true;
     }
     
-    public BoardValues get(int col, int row) {
+    public BoardValues get(int row, int col) {
         if (col > COL3 || col < COL1 || 
             row > ROW3 || row < ROW1) return BoardValues.ERROR;
-        return board[col][row];
+        return board[row][col];
     }
     
     public void clear() {
-        for (BoardValues[] subarray : board) {
-            for (BoardValues value : subarray) {
-                value = BoardValues.EMPTY;
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                board[i][j] = BoardValues.EMPTY;
             }
         }
+    }
+    
+    @Override
+    public String toString() {
+        String string = "";
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                switch (board[i][j]) {
+                    case X:
+                        string += "X";
+                        break;
+                    case O:
+                        string += "O";
+                        break;
+                    case EMPTY:
+                        string += " ";
+                        break;
+                    case ERROR:
+                    default:
+                        string += "?";
+                        break;
+                }
+                if (j != board[i].length - 1) string+=" | ";
+            }
+            if (i != board.length -1) string += "\n---------\n";
+        }
+        return string;
     }
 }
