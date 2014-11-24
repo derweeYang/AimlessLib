@@ -41,7 +41,8 @@ public class TicTacToeTest {
         SetErrorValues lastVal = SetErrorValues.SUCCESS;
         while (lastVal != SetErrorValues.SOMEONE_HAS_WON && lastVal != SetErrorValues.BOARD_FULL) {
             lastVal = setAndDisplay(randCoord(), bval);
-            bval = invert(bval);
+            if (lastVal == SetErrorValues.SOMEONE_HAS_WON || lastVal == SetErrorValues.SUCCESS)
+                bval = invert(bval);
         }
     }
     
