@@ -22,10 +22,15 @@ package com.lachm.alib.test;
 public class Test {
 
     public static void main(String[] args) {
-        testTTT();
+        //testTTT();
+        tttFrame();
     }
     
     private static void testTTT() {
         new TicTacToeTest();
+    }
+    
+    private static void tttFrame() {
+        new BoardComponentTest();
     }
 }

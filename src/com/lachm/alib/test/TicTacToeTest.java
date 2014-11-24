@@ -27,8 +27,13 @@ import com.lachm.alib.math.IntCoord;
 public class TicTacToeTest {
     private Board board;
     
-    public TicTacToeTest () {
+    public TicTacToeTest() {
         board = new Board();
+        start();
+    }
+    
+    public TicTacToeTest(Board board) {
+        this.board = board;
         start();
     }
     

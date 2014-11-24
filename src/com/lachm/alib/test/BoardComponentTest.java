@@ -14,20 +14,31 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.lachm.alib.ttt;
 
-import javax.swing.JComponent;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+package com.lachm.alib.test;
+
+import com.lachm.alib.ttt.*;
+import javax.swing.JFrame;
 
 /**
  *
  * @author Lachlan McCarty
  */
-public class BoardComponent extends JComponent {
-    @Override
-    public void paintComponents(Graphics g) {
-        Graphics2D g2 = (Graphics2D) g;
-    }
+public class BoardComponentTest extends JFrame {
+    private final int FRAME_WIDTH = 300;
+    private final int FRAME_HEIGHT = 300;
     
+    private BoardComponent comp = new BoardComponent();
+    
+    public BoardComponentTest() {
+        setTitle("BoardComponent Test");
+        setSize(FRAME_WIDTH, FRAME_HEIGHT);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(true);
+                
+        add(comp);
+        new TicTacToeTest(comp.getBoard());
+        
+        setVisible(true);
+    }
 }

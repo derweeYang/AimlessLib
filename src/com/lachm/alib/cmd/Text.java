@@ -16,8 +16,6 @@
  */
 package com.lachm.alib.cmd;
 
-import java.awt.event.KeyEvent;
-
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
