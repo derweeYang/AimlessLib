@@ -39,7 +39,7 @@ public class BoardComponent extends JComponent {
         this.setLayout(null);
         for (int i = 0; i < components.length; i++) {
             for (int j = 0; j < components[i].length; j++) {
-                components[i][j] = new OXComponent();
+                components[i][j] = new OXComponent(i, j, (JComponent)this);
                 add(components[i][j]);
             }
         }

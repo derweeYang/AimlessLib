@@ -18,6 +18,8 @@
 package com.lachm.alib.test;
 
 import com.lachm.alib.ttt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JFrame;
 
 /**
@@ -38,7 +40,45 @@ public class BoardComponentTest extends JFrame {
                 
         add(comp);
         new TicTacToeTest(comp.getBoard());
+        comp.addMouseListener(new CustomMouseListener());
         
         setVisible(true);
+    }
+}
+
+class CustomMouseListener implements MouseListener {
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        Object source = e.getSource();
+        if (e.getSource().getClass().equals(new OXComponent().getClass())) {
+            OXComponent oxsource = (OXComponent) source;
+            System.out.print("Row: ");
+            System.out.print(oxsource.getIntendedRow()+1);
+            System.out.print(" Col: ");
+            System.out.println(oxsource.getIntendedCol()+1);
+        }
+        else {
+            System.out.println(source.getClass());
+        }
+    }
+    
+    @Override
+    public void mousePressed(MouseEvent e) {
+        
+    }
+    
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        
+    }
+    
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        
+    }
+    
+    @Override
+    public void mouseExited(MouseEvent e) {
+        
     }
 }

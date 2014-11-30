@@ -28,8 +28,43 @@ import java.awt.Graphics2D;
  */
 public class OXComponent extends JComponent {
     
+    private JComponent container;
+    private int intendedRow = -1;
+    private int intendedCol = -1;
+    
     private int dimen = 0;
     private BoardValues value = BoardValues.EMPTY;
+    
+    public OXComponent() {}
+    
+    public OXComponent(int intendedRow, int intendedCol, JComponent container) {
+        this(intendedRow, intendedCol, container, true);
+    }
+    
+    public OXComponent(int intendedRow, int intendedCol, JComponent container, boolean addMouseListener) {
+        this.container = container;
+        this.intendedRow = intendedRow;
+        this.intendedCol = intendedCol;
+        if (addMouseListener) {
+            this.addMouseListener(new OXMouseListener(container));
+        }
+    }
+    
+    public int getIntendedRow() {
+        return intendedRow;
+    }
+    
+    public void setIntendedRow(int intendedRow) {
+        this.intendedRow = intendedRow;
+    }
+    
+    public int getIntendedCol() {
+        return intendedCol;
+    }
+    
+    public void setIntendedCol(int intendedCol) {
+        this.intendedCol = intendedCol;
+    }
     
     public void setBoardValue(BoardValues value) {
         this.value = value;
