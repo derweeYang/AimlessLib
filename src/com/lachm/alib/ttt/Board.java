@@ -43,7 +43,6 @@ public class Board {
         if (winner != BoardValues.EMPTY && winner != BoardValues.ERROR) return SetErrorValues.SOMEONE_HAS_WON_ALREADY;
         if (col > COL3 || col < COL1 || 
             row > ROW3 || row < ROW1) return SetErrorValues.OUT_OF_BOUNDS;
-        if (numberOfSuccessfulSets >= 9) return SetErrorValues.BOARD_FULL;
         if (value == BoardValues.EMPTY || value == BoardValues.ERROR) 
             return SetErrorValues.INVALID_VALUE;
         if (board[row][col] != BoardValues.EMPTY) return SetErrorValues.NOT_EMPTY;
@@ -51,6 +50,7 @@ public class Board {
         winner = checkWin(row, col);
         numberOfSuccessfulSets++;
         if (winner != BoardValues.EMPTY && winner != BoardValues.ERROR) return SetErrorValues.SOMEONE_HAS_WON;
+        else if (numberOfSuccessfulSets >= 9) return SetErrorValues.BOARD_FULL;
         return SetErrorValues.SUCCESS;
     }
     
@@ -126,6 +126,8 @@ public class Board {
                 board[i][j] = BoardValues.EMPTY;
             }
         }
+        numberOfSuccessfulSets = 0;
+        winner = BoardValues.EMPTY;
     }
     
     public BoardValues getWinner() {

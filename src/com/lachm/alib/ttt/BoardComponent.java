@@ -17,6 +17,7 @@
 package com.lachm.alib.ttt;
 
 import java.awt.BasicStroke;
+import java.awt.Dimension;
 import javax.swing.JComponent;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -39,7 +40,6 @@ public class BoardComponent extends JComponent {
     }
     
     public BoardComponent(boolean addOXMouseListeners) {
-        super();
         this.setLayout(null);
         for (int i = 0; i < components.length; i++) {
             for (int j = 0; j < components[i].length; j++) {
@@ -86,6 +86,9 @@ public class BoardComponent extends JComponent {
                 else if (boardValue == BoardValues.O) {
                     setO(row, col);
                 }
+                else if (boardValue == BoardValues.EMPTY || boardValue == BoardValues.ERROR) {
+                    setEmpty(row, col);
+                }
             }
         }
         
@@ -102,6 +105,10 @@ public class BoardComponent extends JComponent {
     
     private void setO(int row, int col) {
         components[row][col].setBoardValue(BoardValues.O);
+    }
+    
+    private void setEmpty(int row, int col) {
+        components[row][col].setBoardValue(BoardValues.EMPTY);
     }
     
     private void setDimen() {
