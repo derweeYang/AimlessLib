@@ -17,13 +17,21 @@
 package com.lachm.alib.math;
 
 /**
- *
+ * Object that holds integer x and y values.
  * @author Lachlan McCarty
  */
-public class IntCoord {
+public class IntCoord implements Coord {
     private int x;
     private int y;
     
+    /**
+     * Construct an object to hold integer x and y values.
+     * By default the coordinate is (0,0).
+     */
+    public IntCoord() {
+        this.x = 0;
+        this.y = 0;
+    }
     /**
      * Construct an object to hold integer x and y values.
      * @param x The x or row value.
@@ -34,7 +42,19 @@ public class IntCoord {
         this.y = y;
     }
     
+    public void set(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    
     public int getX() {return x;}
+    public void setX(int x) {this.x = x;}
     
     public int getY() {return y;}
+    public void setY(int y) {this.y = y;}
+    
+    public void move(int dx, int dy) {
+        this.x += dx;
+        this.y += dy;
+    }
 }
