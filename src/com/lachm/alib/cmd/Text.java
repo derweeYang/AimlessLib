@@ -21,7 +21,7 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 /**
- *
+ * Text has static methods intended to aid in the development of text-based programs.
  * @author Lachlan McCarty
  */
 public class Text {

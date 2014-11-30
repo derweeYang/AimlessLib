@@ -16,8 +16,6 @@
  */
 package com.lachm.alib.ttt;
 
-import com.lachm.alib.math.IntCoord;
-
 /**
  * Board holds the Tic-Tac-Toe board data.
  * @author Lachlan McCarty
@@ -39,10 +37,6 @@ public class Board {
     
     public Board() {
         clear();
-    }
-    
-    public SetErrorValues set(IntCoord coord, BoardValues value) {
-        return set(coord.getRow(), coord.getCol(), value);
     }
     
     public SetErrorValues set(int row, int col, BoardValues value) {
@@ -118,10 +112,6 @@ public class Board {
             }
         }
         return BoardValues.EMPTY;
-    }
-    
-    public BoardValues get(IntCoord coord) {
-        return get(coord.getRow(), coord.getCol());
     }
     
     public BoardValues get(int row, int col) {

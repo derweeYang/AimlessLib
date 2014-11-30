@@ -14,27 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.lachm.alib.math;
-
 /**
- *
- * @author Lachlan McCarty
+ * Intended to aid in the development of command-line and text based programs.
  */
-public class IntCoord {
-    private int x;
-    private int y;
-    
-    /**
-     * Construct an object to hold integer x and y values.
-     * @param x The x or row value.
-     * @param y The y or column value.
-     */
-    public IntCoord(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-    
-    public int getX() {return x;}
-    
-    public int getY() {return y;}
-}
+package com.lachm.alib.cmd;

@@ -19,7 +19,7 @@ package com.lachm.alib.math;
 import java.util.Random;
 
 /**
- * Class with static methods for Math-related tasks
+ * Class with static methods for Math-related tasks.
  * @author Lachlan McCarty
  */
 public class AimlessMath {

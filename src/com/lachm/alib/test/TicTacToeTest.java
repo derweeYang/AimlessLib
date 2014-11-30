@@ -52,7 +52,7 @@ public class TicTacToeTest {
     }
     
     private SetErrorValues setAndDisplay(IntCoord coord, BoardValues value) {
-        SetErrorValues val = board.set(coord, value);
+        SetErrorValues val = board.set(coord.getX(), coord.getY(), value);
         System.out.println(board);
         System.out.println(val.name());
         System.out.println();
