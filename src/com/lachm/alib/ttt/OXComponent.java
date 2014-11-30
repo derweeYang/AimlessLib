@@ -41,11 +41,11 @@ public class OXComponent extends JComponent {
         this(intendedRow, intendedCol, container, true);
     }
     
-    public OXComponent(int intendedRow, int intendedCol, JComponent container, boolean addMouseListener) {
+    public OXComponent(int intendedRow, int intendedCol, JComponent container, boolean addOXMouseListener) {
         this.container = container;
         this.intendedRow = intendedRow;
         this.intendedCol = intendedCol;
-        if (addMouseListener) {
+        if (addOXMouseListener) {
             this.addMouseListener(new OXMouseListener(container));
         }
     }

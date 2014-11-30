@@ -20,8 +20,13 @@ package com.lachm.alib.math;
  *
  * @author Lachlan McCarty
  */
-public interface Coord {
-    void set(int x, int y);
+public interface IntegerCoordinate {
+    /**
+     * Set the coordinate's x and y values.
+     * @param x the x value
+     * @param y the y value
+     */
+    void setCoord(int x, int y);
     
     int getX();
     void setX(int x);

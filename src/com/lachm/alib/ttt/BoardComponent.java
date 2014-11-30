@@ -35,11 +35,15 @@ public class BoardComponent extends JComponent {
     private int[] val = new int[4];
     
     public BoardComponent() {
+        this(true);
+    }
+    
+    public BoardComponent(boolean addOXMouseListeners) {
         super();
         this.setLayout(null);
         for (int i = 0; i < components.length; i++) {
             for (int j = 0; j < components[i].length; j++) {
-                components[i][j] = new OXComponent(i, j, (JComponent)this);
+                components[i][j] = new OXComponent(i, j, (JComponent)this, addOXMouseListeners);
                 add(components[i][j]);
             }
         }

@@ -20,7 +20,7 @@ package com.lachm.alib.math;
  * Object that holds integer x and y values.
  * @author Lachlan McCarty
  */
-public class IntCoord implements Coord {
+public class IntCoord implements IntegerCoordinate {
     private int x;
     private int y;
     
@@ -42,17 +42,35 @@ public class IntCoord implements Coord {
         this.y = y;
     }
     
-    public void set(int x, int y) {
+    /**
+     * Set the coordinate's x and y values.
+     * @param x the x value
+     * @param y the y value
+     */
+    public void set(int x, int y) {setCoord(x,y);}
+    
+    @Override
+    public void setCoord(int x, int y) {
         this.x = x;
         this.y = y;
     }
     
+    @Override
     public int getX() {return x;}
+    @Override
     public void setX(int x) {this.x = x;}
     
+    @Override
     public int getY() {return y;}
+    @Override
     public void setY(int y) {this.y = y;}
     
+    /**
+     * Move the coordinate.
+     * @param dx Added to x.
+     * @param dy Added to y.
+     */
+    @Override
     public void move(int dx, int dy) {
         this.x += dx;
         this.y += dy;
